@@ -17,13 +17,13 @@ export class HugoCompletionProvider implements CompletionItemProvider {
       }
 
       // Retrieve all the partials from the project
-      const searchPath = join(`**/partials/`, partialPathQuoted || "", `**/*.html`);
+      const searchPath = join(`**/_partials/`, partialPathQuoted || "", `**/*.html`);
       const files = await workspace.findFiles(searchPath, '/node_modules/**');
 
       if (files && files.length > 0) {
         const partialFiles = files.map(file => {
           const parsedPath = parseWinPath(file.fsPath);
-          const splitPath = parsedPath.split('/partials/');
+          const splitPath = parsedPath.split('/_partials/');
           const lastPath = splitPath.pop();
 
           if (!lastPath) {

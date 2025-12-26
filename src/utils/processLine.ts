@@ -9,7 +9,7 @@ export const processLine = async (document: TextDocument, position: Position, to
     const partialPathQuoted = getPartialPath(lineText);
 
     if (partialPathQuoted) {
-      const partialPath = join("/partials/", partialPathQuoted.replace(/['"]+/g, ''));
+      const partialPath = join("/_partials/", partialPathQuoted.replace(/['"]+/g, ''));
       const files = await workspace.findFiles(`**${partialPath}`, '/node_modules/**', 1);
 
       if (files && files.length > 0) {
