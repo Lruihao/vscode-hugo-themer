@@ -1,28 +1,32 @@
-name: Release
+name: Release for new tag
+
 on:
-  release:
-    types:
-      - published
+  push:
+    tags:
+      - 'v*.*.*'
   workflow_dispatch:
 
 jobs:
-  build:
-    name: "Build and release"
+  release:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v6
         with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org/
+          fetch-depth: 0 # Fetch all history for generating release notes
 
-      - name: Install the dependencies
-        run: npm i
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
 
-      - name: Install vsce
-        run: npm i -g vsce
+      - name: Generate release notes
+        run: |
+          npx auto-changelog-plus --starting-version ${{ github.ref_name }}
+          sed -i '1,4d' CHANGELOG.md
 
-      - name: Publish
-        run: vsce publish -p ${{ secrets.VSCE_PAT }}
-
+      - name: GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          body_path: CHANGELOG.md
