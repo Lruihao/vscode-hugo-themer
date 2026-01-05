@@ -1,7 +1,7 @@
 {
-  "name": "vscode-hugo-themer",
-  "displayName": "Hugo Themer",
-  "description": "Extension to help you building Hugo templates",
+  "name": "hugo-partials-refs",
+  "displayName": "Hugo Partials Refs",
+  "description": "Provides hover, go-to-definition, and auto-completion support for Hugo partial templates",
   "icon": "assets/hugo-themer.png",
   "version": "1.2.0",
   "engines": {
@@ -15,8 +15,8 @@
   "badges": [
     {
       "description": "version",
-      "url": "https://img.shields.io/github/package-json/v/Lruihao/vscode-hugo-themer?color=green&label=vscode-hugo-themer&style=flat-square",
-      "href": "https://github.com/Lruihao/vscode-hugo-themer"
+      "url": "https://img.shields.io/github/package-json/v/Lruihao/hugo-partials-refs?color=green&label=hugo-partials-refs&style=flat-square",
+      "href": "https://github.com/Lruihao/hugo-partials-refs"
     },
     {
       "description": "Buy me a coffee",
@@ -30,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lruihao/vscode-hugo-themer"
+    "url": "https://github.com/Lruihao/hugo-partials-refs"
   },
   "activationEvents": [
     "onStartupFinished"

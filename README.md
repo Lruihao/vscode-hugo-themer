@@ -1,6 +1,6 @@
-# VSCode Hugo Themer
+# Hugo Partials Refs
 
-This VSCode extension is created to make it easier to create and maintain [Hugo](https://gohugo.io/) static site generator themes.
+VSCode extension for [Hugo](https://gohugo.io/) that provides IntelliSense support for partial templates, including hover information, go-to-definition navigation, and path auto-completion.
 
 ## Available functionalities
 
@@ -20,8 +20,4 @@ When creating partial references in your HTML files, you will have the ability t
 
 ## Feedback / issues / ideas
 
-Please submit them via creating an issue in the project repository: [issue list](https://github.com/estruyf/vscode-hugo-themer/issues).
-
-## Changelog
-
-[Check out the changelog](https://github.com/estruyf/vscode-hugo-themer/blob/master/changelog.md)
+Please submit them via creating an issue in the project repository: [issue list](https://github.com/Lruihao/hugo-partials-refs/issues).
